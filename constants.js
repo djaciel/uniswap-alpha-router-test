@@ -29,15 +29,15 @@ module.exports = {
       name: 'ZRX',
     },
     jUSDT: {
-      address: '0xAe1FF52cC404D5D7AFE3F272e7a1595aDbdD68C6',
+      address: '0xd0CdDBee19A25D65B0D905F7053Fdd19947ab370',
       name: 'jUSDT',
     },
     jWBTC: {
-      address: '0x39CE47F84e0E4721EF254258C5620A107dd9F658',
+      address: '0x879947a97a662E8294aFD601a901383D7731484e',
       name: 'jWBTC',
     },
     jDAI: {
-      address: '0xCa82D2448e728491dCACf81c286AaF36F349c52B',
+      address: '0x659b25Cbf47128BF952EFB97f27b0821F169A1E5',
       name: 'jDAI',
     },
   },
