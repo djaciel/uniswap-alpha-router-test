@@ -24,7 +24,7 @@ function encodePath(path, fees) {
 }
 
 const init = async () => {
-  const url = 'https://rinkeby.infura.io/v3/8d28d6befffa4536b51652325a3d54e5'
+  const url = 'https://rinkeby.infura.io/v3/infurakey'
   const customHttpProvider = new ethers.providers.JsonRpcProvider(url)
   const router = new AlphaRouter({ chainId: 4, provider: customHttpProvider })
 
@@ -32,8 +32,7 @@ const init = async () => {
 
   const TokenTo = new Token(4, Tokens.DAI.address, 18, Tokens.DAI.name, Tokens.DAI.name)
 
-  const amountWei = '100000000000000'
-  //const amountWei = '203858000000000'
+  const amountWei = '100000000000000000'
 
   //TokenTo - USDT
   // const amount = CurrencyAmount.fromRawAmount(TokenTo, JSBI.BigInt(amountWei))
