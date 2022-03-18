@@ -28,11 +28,11 @@ const init = async () => {
   const customHttpProvider = new ethers.providers.JsonRpcProvider(url)
   const router = new AlphaRouter({ chainId: 4, provider: customHttpProvider })
 
-  const USDT = new Token(4, Tokens.USDT.address, 18, Tokens.USDT.name, Tokens.USDT.name)
+  const USDT = new Token(4, Tokens.jWBTC.address, 18, Tokens.jWBTC.name, Tokens.jWBTC.name)
 
-  const TokenTo = new Token(4, Tokens.DAI.address, 18, Tokens.DAI.name, Tokens.DAI.name)
+  const TokenTo = new Token(4, Tokens.WETH9.address, 18, Tokens.WETH9.name, Tokens.WETH9.name)
 
-  const amountWei = '100000000000000000'
+  const amountWei = '1000000000000000'
 
   //TokenTo - USDT
   // const amount = CurrencyAmount.fromRawAmount(TokenTo, JSBI.BigInt(amountWei))
@@ -50,7 +50,15 @@ const init = async () => {
     routes.map((route, index) => {
       console.log('route ', index)
       console.log('protocol: ', route.protocol)
-      const { pools, tokenPath } = route.route
+      let pools, tokenPath
+
+      if (route.route.pools && route.route.tokenPath) {
+        pools = route.route.pools
+        tokenPath = route.route.tokenPath
+      } else {
+        pools = route.pools
+        tokenPath = route.tokenPath
+      }
 
       let feeArr = []
       let pathArr = []
@@ -83,7 +91,7 @@ const init = async () => {
     })
   }
 
-  //console.log('route: ', JSON.stringify(route))
+  //console.log('route: ', JSON.stringify(data))
 }
 
 init()
