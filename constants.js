@@ -40,5 +40,9 @@ module.exports = {
       address: '0x659b25Cbf47128BF952EFB97f27b0821F169A1E5',
       name: 'jDAI',
     },
+    WETH9: {
+      address: '0xc778417E063141139Fce010982780140Aa0cD5Ab',
+      name: 'WETH9',
+    },
   },
 }
